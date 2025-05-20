@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topological Sort Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Topological Sort Time Analysis</h1>
+        </header>
+        <div class="algorithms-container">
+            <div class="algorithm-section">
+                <h2>Graph Input</h2>
+                <div class="input-section">
+                    <div class="input-group">
+                        <label for="vertices">Number of Vertices:</label>
+                        <input type="number" id="vertices" min="1" value="20">
+                    </div>
+                    <div class="input-group">
+                        <label for="edgeList">Edge List (format: "from,to" one edge per line):</label>
+                        <textarea id="edgeList" placeholder="Example:
+0,1
+0,2
+1,3
+2,3"></textarea>
+                    </div>
+                    <button type="button" onclick="processGraph()">Process Graph</button>
+                </div>
+            </div>
+
+            <div class="results-container">
+                <div class="algorithm-section">
+                    <h2>DFS-based Topological Sort</h2>
+                    <div class="complexity-info">
+                        <p>Time Complexity: O(V + E)</p>
+                        <p>V = number of vertices, E = number of edges</p>
+                        <ul>
+                            <li>DFS traversal: O(V + E)</li>
+                            <li>Stack operations: O(V)</li>
+                        </ul>
+                    </div>
+                    <div id="dfsResult" class="result-box"></div>
+                    <div id="dfsTime" class="time-info"></div>
+                    <div id="dfsStats" class="stats-info"></div>
+                </div>
+
+                <div class="algorithm-section">
+                    <h2>Source Removal Algorithm</h2>
+                    <div class="complexity-info">
+                        <p>Time Complexity: O(V + E)</p>
+                        <p>V = number of vertices, E = number of edges</p>
+                        <ul>
+                            <li>Building in-degree: O(V + E)</li>
+                            <li>Queue operations: O(V)</li>
+                            <li>Edge removal: O(E)</li>
+                        </ul>
+                    </div>
+                    <div id="sourceRemovalResult" class="result-box"></div>
+                    <div id="sourceRemovalTime" class="time-info"></div>
+                    <div id="sourceRemovalStats" class="stats-info"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
